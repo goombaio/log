@@ -29,3 +29,9 @@ type ErrorLogger interface {
 	// Error logs an error message.
 	Error(err error, msg string)
 }
+
+// Logger represents the ability to log both non-error and error messages.
+type Logger interface {
+	InfoLogger
+	ErrorLogger
+}
