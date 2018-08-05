@@ -65,6 +65,7 @@ dev-deps:		## Install dev and build dependencies
 .PHONY: clean
 clean:			## Delete generated development environment
 	go clean
+	rm -f coverage-all.out
 
 # Docs
 
