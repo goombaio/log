@@ -41,10 +41,10 @@ func (l *logger) SetOutput(out io.Writer) {
 
 // Info logs an information message.
 func (l *logger) Info(msg string) {
-	fmt.Fprintf(l.output, "%s %s\n", "[INFO]", msg)
+	_, _ = fmt.Fprintf(l.output, "%s %s\n", "[INFO]", msg)
 }
 
 // Error logs an error and a message.
 func (l *logger) Error(err error, msg string) {
-	fmt.Fprintf(l.output, "%s %s, %s\n", "[ERROR]", msg, err)
+	_, _ = fmt.Fprintf(l.output, "%s %s, %s\n", "[ERROR]", msg, err)
 }
