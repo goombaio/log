@@ -58,7 +58,6 @@ deps:			## Install build dependencies
 
 dev-deps: deps
 dev-deps:		## Install dev and build dependencies
-	go get -u github.com/mattn/goveralls
 	go get -u github.com/alecthomas/gometalinter
 	gometalinter --install
 
