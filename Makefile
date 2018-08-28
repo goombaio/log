@@ -43,9 +43,9 @@ cover-html: cover-profile
 cover-html:		## Generate coverage report
 	go tool cover -html=coverage-all.out
 
-.PHONY: coveralls
-coveralls:
-	goveralls -service circle-ci -repotoken token
+.PHONY: codecov
+codecov:
+	bash <(curl -s https://codecov.io/bash)
 
 # Lint
 
