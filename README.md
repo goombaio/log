@@ -6,6 +6,7 @@ A simple, modular, etensible golang log package.
 [![CircleCI](https://circleci.com/gh/goombaio/log.svg?style=svg)](https://circleci.com/gh/goombaio/log)
 [![codecov](https://codecov.io/gh/goombaio/log/branch/master/graph/badge.svg)](https://codecov.io/gh/goombaio/log)
 [![Go Report Card](https://goreportcard.com/badge/github.com/goombaio/log)](https://goreportcard.com/report/github.com/goombaio/log)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgoombaio%2Flog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgoombaio%2Flog?ref=badge_shield)
 
 ## License
 
@@ -25,3 +26,5 @@ limitations under the License.
 
 [License-Url]: http://opensource.org/licenses/Apache
 [License-Image]: https://img.shields.io/badge/License-Apache-blue.svg
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgoombaio%2Flog.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgoombaio%2Flog?ref=badge_large)
