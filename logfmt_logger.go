@@ -22,19 +22,20 @@ import (
 	"io"
 )
 
-type logfmtLogger struct {
+// LogfmtLogger ...
+type LogfmtLogger struct {
 	output io.Writer
 }
 
 // NewLogfmtLogger ...
 func NewLogfmtLogger(w io.Writer) Logger {
-	return &logfmtLogger{
+	return &LogfmtLogger{
 		output: w,
 	}
 }
 
 // Log ...
-func (l logfmtLogger) Log(keyvals ...interface{}) error {
+func (l LogfmtLogger) Log(keyvals ...interface{}) error {
 	for _, keyval := range keyvals {
 		fmt.Fprintf(l.output, "%s", keyval)
 	}

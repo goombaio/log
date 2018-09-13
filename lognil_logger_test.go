@@ -16,3 +16,27 @@
 // under the License.
 
 package log_test
+
+import (
+	"testing"
+
+	"github.com/goombaio/log"
+)
+
+func TestNilLogger(t *testing.T) {
+	_ = log.NewNilLogger()
+}
+
+func TestNilLogger_Log(t *testing.T) {
+	logger := log.NewNilLogger()
+
+	err := logger.Log("foo")
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+}

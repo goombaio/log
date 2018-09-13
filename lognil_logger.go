@@ -15,4 +15,18 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package log_test
+package log
+
+// NilLogger is a log.Logger that does nothing.
+type NilLogger struct{}
+
+// NewNilLogger ...
+func NewNilLogger() Logger {
+	return &NilLogger{}
+}
+
+// Log ...
+func (l NilLogger) Log(keyvals ...interface{}) error {
+	// Do nothing.s
+	return nil
+}
