@@ -16,3 +16,30 @@
 // under the License.
 
 package log_test
+
+import (
+	"os"
+	"testing"
+
+	"github.com/goombaio/log"
+)
+
+func TestFmtLogger(t *testing.T) {
+	output := os.Stderr
+	_ = log.NewFmtLogger(output)
+}
+
+func TestFmtLogger_Log(t *testing.T) {
+	output := os.Stderr
+	logger := log.NewFmtLogger(output)
+
+	err := logger.Log("foo")
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+}
