@@ -21,33 +21,13 @@ import (
 	"github.com/goombaio/log"
 )
 
-// NilInfoLogger is a log.InfoLogger that does nothing.
-type NilInfoLogger struct{}
-
-var _ log.InfoLogger = NilInfoLogger{}
-
-func (_ NilInfoLogger) Info(_ string) {
-	// Do nothing.
-}
-
-// NilErrorLogger is a log.ErrorLogger that does nothing.
-type NilErrorLogger struct{}
-
-var _ log.ErrorLogger = NilErrorLogger{}
-
-func (_ NilErrorLogger) Error(_ error, _ string) {
-	// Do nothing.
-}
-
 // NilLogger is a log.Logger that does nothing.
 type NilLogger struct{}
 
 var _ log.Logger = NilLogger{}
 
-func (_ NilLogger) Info(_ string) {
+func (_ NilLogger) Log(_ ...interface{}) error {
 	// Do nothing.
-}
 
-func (_ NilLogger) Error(_ error, _ string) {
-	// Do nothing.
+	return nil
 }

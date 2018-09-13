@@ -16,35 +16,3 @@
 // under the License.
 
 package log
-
-import (
-	"fmt"
-	"io"
-)
-
-// logger represents an implementation of log.Logger.
-type logger struct {
-	output io.Writer
-}
-
-// NewLogger creates a local instance of log.Logger.
-func NewLogger(out io.Writer) Logger {
-	return &logger{
-		output: out,
-	}
-}
-
-// SetOutput sets the logger output destination.
-func (l *logger) SetOutput(out io.Writer) {
-	l.output = out
-}
-
-// Info logs an information message.
-func (l *logger) Info(msg string) {
-	_, _ = fmt.Fprintf(l.output, "%s %s\n", "[INFO]", msg)
-}
-
-// Error logs an error and a message.
-func (l *logger) Error(err error, msg string) {
-	_, _ = fmt.Fprintf(l.output, "%s %s, %s\n", "[ERROR]", msg, err)
-}

@@ -15,23 +15,9 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-// Package log defines interfaces for logging.
 package log
 
-// InfoLogger represents the ability to log non-error messages.
-type InfoLogger interface {
-	// Info logs a non-error message.
-	Info(msg string)
-}
-
-// ErrorLogger represents the ability to log error messages.
-type ErrorLogger interface {
-	// Error logs an error message.
-	Error(err error, msg string)
-}
-
-// Logger represents the ability to log both non-error and error messages.
+// Logger ...
 type Logger interface {
-	InfoLogger
-	ErrorLogger
+	Log(keyvals ...interface{}) error
 }

@@ -15,24 +15,5 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package log_test
-
-import (
-	"errors"
-	"os"
-
-	"github.com/goombaio/log"
-)
-
-func ExampleLogger() {
-	logger := log.NewLogger(os.Stdout)
-
-	logger.Info("This is an Info log message")
-
-	err := errors.New("sample error")
-	logger.Error(err, "This is an Error log message")
-
-	// Output:
-	// [INFO] This is an Info log message
-	// [ERROR] This is an Error log message, sample error
-}
+// Package log defines interfaces for logging.
+package log
