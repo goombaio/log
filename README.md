@@ -32,7 +32,15 @@ import (
 )
 
 func main() {
-    // TODO
+    output := os.Stdout
+    logger := log.NewFmtLogger(output)
+
+    err := logger.Log("foo", "bar", "1", true, nil)
+    if err != nil {
+        panic(err)
+    }
+    // Output:
+    // foo bar 1 true <nil>
 }
 ```
 
