@@ -38,7 +38,7 @@ func main() {
 
 ## License
 
-Copyright (c) 2018 Raül Pérez, repejota@gmail.com.
+Copyright (c) 2018 Goomba project Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
