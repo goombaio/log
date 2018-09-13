@@ -29,9 +29,11 @@ type FmtLogger struct {
 
 // NewFmtLogger ...
 func NewFmtLogger(w io.Writer) Logger {
-	return &FmtLogger{
+	logger := &FmtLogger{
 		output: w,
 	}
+
+	return logger
 }
 
 // Log ...

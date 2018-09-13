@@ -22,11 +22,14 @@ type NilLogger struct{}
 
 // NewNilLogger ...
 func NewNilLogger() Logger {
-	return &NilLogger{}
+	logger := &NilLogger{}
+
+	return logger
 }
 
 // Log ...
 func (l NilLogger) Log(keyvals ...interface{}) error {
-	// Do nothing.s
+	// Do nothing.
+
 	return nil
 }
