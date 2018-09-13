@@ -2,11 +2,39 @@
 
 A simple, modular, etensible golang log package.
 
-[![License][License-Image]][License-Url]
-[![CircleCI](https://circleci.com/gh/goombaio/log.svg?style=svg)](https://circleci.com/gh/goombaio/log)
-[![codecov](https://codecov.io/gh/goombaio/log/branch/master/graph/badge.svg)](https://codecov.io/gh/goombaio/log)
-[![Go Report Card](https://goreportcard.com/badge/github.com/goombaio/log)](https://goreportcard.com/report/github.com/goombaio/log)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgoombaio%2Flog.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgoombaio%2Flog?ref=badge_shield)
+[![License][License-Image]][License-URL]
+[![FOSSA Status][FOSSA-Image]][FOSSA-URL]
+[![CircleCI Status][CircleCI-Image]][CircleCI-URL]
+[![Coverage Report][Coverage-Image]][Coverage-URL]
+[![Go Report Card][GoReportCard-Image]][GoReportCard-URL]
+[![CII Best Practices][CII-Image]][CII-URL]
+[![GoDoc][GoDoc-Image]][GoDoc-URL]
+
+## Install
+
+```bash
+go get github.com/goombaio/log
+```
+
+You can also update an already installed version:
+
+```bash
+go get -u github.com/goombaio/log
+```
+
+## Example of use
+
+```go
+package main
+
+import (
+    "github.com/goombaio/log"
+)
+
+func main() {
+    // TODO
+}
+```
 
 ## License
 
@@ -24,7 +52,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[License-Url]: http://opensource.org/licenses/Apache
 [License-Image]: https://img.shields.io/badge/License-Apache-blue.svg
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgoombaio%2Flog.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fgoombaio%2Flog?ref=badge_large)
+[License-URL]: http://opensource.org/licenses/Apache
+[FOSSA-Image]: https://app.fossa.io/api/projects/git%2Bgithub.com%2Fgoombaio%2Flog.svg?type=shield
+[FOSSA-URL]: https://app.fossa.io/projects/git%2Bgithub.com%2Fgoombaio%2Flog?ref=badge_shield
+[CircleCI-Image]: https://circleci.com/gh/goombaio/log.svg?style=svg
+[CircleCI-URL]: https://circleci.com/gh/goombaio/log
+[Coverage-Image]: https://codecov.io/gh/goombaio/log/branch/master/graph/badge.svg
+[Coverage-URL]: https://codecov.io/gh/goombaio/log
+[GoReportCard-Image]: https://goreportcard.com/badge/github.com/goombaio/log
+[GoReportCard-URL]: https://goreportcard.com/report/github.com/goombaio/log
+[CII-Image]: https://bestpractices.coreinfrastructure.org/projects/2184/badge
+[CII-URL]: https://bestpractices.coreinfrastructure.org/projects/2184
+[GoDoc-Image]: https://godoc.org/github.com/goombaio/log?status.svg
+[GoDoc-URL]: http://godoc.org/github.com/goombaio/log
