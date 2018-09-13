@@ -18,19 +18,19 @@
 package log_test
 
 import (
-	"os"
+	"io/ioutil"
 	"testing"
 
 	"github.com/goombaio/log"
 )
 
 func TestFmtLogger(t *testing.T) {
-	output := os.Stderr
+	output := ioutil.Discard
 	_ = log.NewFmtLogger(output)
 }
 
 func TestFmtLogger_Log(t *testing.T) {
-	output := os.Stderr
+	output := ioutil.Discard
 	logger := log.NewFmtLogger(output)
 
 	err := logger.Log("foo")

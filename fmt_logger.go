@@ -41,7 +41,7 @@ func (l FmtLogger) Log(keyvals ...interface{}) error {
 	for _, keyval := range keyvals {
 		fmt.Fprintf(l.output, "%v ", keyval)
 	}
-	fmt.Println()
+	fmt.Fprintf(l.output, "\n")
 
 	return nil
 }
