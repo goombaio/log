@@ -16,3 +16,29 @@
 // under the License.
 
 package log
+
+import (
+	"fmt"
+	"io"
+)
+
+type logfmtLogger struct {
+	output io.Writer
+}
+
+// NewLogfmtLogger ...
+func NewLogfmtLogger(w io.Writer) Logger {
+	return &logfmtLogger{
+		output: w,
+	}
+}
+
+// Log ...
+func (l logfmtLogger) Log(keyvals ...interface{}) error {
+	for _, keyval := range keyvals {
+		fmt.Fprintf(l.output, "%s", keyval)
+	}
+	fmt.Println()
+
+	return nil
+}
