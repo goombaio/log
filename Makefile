@@ -12,7 +12,6 @@ LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.Build=${BUILD}"
 # Build & Install
 
 install: clean		## Build and install package on your system
-	packr -v
 	go install $(LDFLAGS) -v $(PACKAGES)
 
 .PHONY: version
@@ -57,6 +56,7 @@ benchmark:		## Execute package benchmarks
 
 deps:			## Install build dependencies
 	go get -u
+	go mod tidy -v
 	go mod download
 	go mod verify
 
@@ -67,6 +67,12 @@ dev-deps:		## Install dev and build dependencies
 clean:			## Delete generated development environment
 	go clean
 	rm -f coverage-all.out
+
+# Lint
+
+.PHONY: lint
+lint:			## Lint source code
+	./lint.bash
 
 # Docs
 

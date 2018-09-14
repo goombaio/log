@@ -39,9 +39,12 @@ func NewFmtLogger(w io.Writer) Logger {
 // Log ...
 func (l FmtLogger) Log(keyvals ...interface{}) error {
 	for _, keyval := range keyvals {
-		fmt.Fprintf(l.output, "%v ", keyval)
+		_, err := fmt.Fprintf(l.output, "%v ", keyval)
+		if err != nil {
+			return err
+		}
 	}
-	fmt.Fprintf(l.output, "\n")
+	_, err := fmt.Fprintf(l.output, "\n")
 
-	return nil
+	return err
 }
