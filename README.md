@@ -67,7 +67,7 @@ limitations under the License.
 [Coverage-URL]: https://codecov.io/gh/goombaio/log
 [GoReportCard-Image]: https://goreportcard.com/badge/github.com/goombaio/log
 [GoReportCard-URL]: https://goreportcard.com/report/github.com/goombaio/log
-[CII-Image]: https://bestpractices.coreinfrastructure.org/projects/2184/badge
-[CII-URL]: https://bestpractices.coreinfrastructure.org/projects/2184
+[CII-Image]: https://bestpractices.coreinfrastructure.org/projects/2222/badge
+[CII-URL]: https://bestpractices.coreinfrastructure.org/projects/2222
 [GoDoc-Image]: https://godoc.org/github.com/goombaio/log?status.svg
 [GoDoc-URL]: http://godoc.org/github.com/goombaio/log
