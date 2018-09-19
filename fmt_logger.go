@@ -22,12 +22,13 @@ import (
 	"io"
 )
 
-// FmtLogger ...
+// FmtLogger represents a log.Logger that encodes keyvals to a io.Writer in
+// logfmt format.
 type FmtLogger struct {
 	output io.Writer
 }
 
-// NewFmtLogger ...
+// NewFmtLogger creates a new log.Logger.
 func NewFmtLogger(w io.Writer) Logger {
 	logger := &FmtLogger{
 		output: w,
@@ -36,7 +37,7 @@ func NewFmtLogger(w io.Writer) Logger {
 	return logger
 }
 
-// Log ...
+// Log encodes encodes keyvals to a io.Writer in logfmt format.
 func (l FmtLogger) Log(keyvals ...interface{}) error {
 	for _, keyval := range keyvals {
 		_, err := fmt.Fprintf(l.output, "%v ", keyval)

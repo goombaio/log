@@ -17,17 +17,17 @@
 
 package log
 
-// NopLogger is a log.Logger that does nothing.
+// NopLogger represents a log.Logger that does nothing.
 type NopLogger struct{}
 
-// NewNopLogger ...
+// NewNopLogger creates a new log.Logger.
 func NewNopLogger() Logger {
 	logger := &NopLogger{}
 
 	return logger
 }
 
-// Log ...
+// Log ignores all keyvals received as arguments and does nothing.
 func (l NopLogger) Log(keyvals ...interface{}) error {
 	// Do nothing.
 
