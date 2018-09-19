@@ -23,12 +23,12 @@ import (
 	"github.com/goombaio/log"
 )
 
-func TestNilLogger(t *testing.T) {
-	_ = log.NewNilLogger()
+func TestNopLogger(t *testing.T) {
+	_ = log.NewNopLogger()
 }
 
-func TestNilLogger_Log(t *testing.T) {
-	logger := log.NewNilLogger()
+func TestNopLogger_Log(t *testing.T) {
+	logger := log.NewNopLogger()
 
 	err := logger.Log("foo")
 	if err != nil {

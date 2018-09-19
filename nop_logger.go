@@ -17,18 +17,18 @@
 
 package log
 
-// NilLogger is a log.Logger that does nothing.
-type NilLogger struct{}
+// NopLogger is a log.Logger that does nothing.
+type NopLogger struct{}
 
-// NewNilLogger ...
-func NewNilLogger() Logger {
-	logger := &NilLogger{}
+// NewNopLogger ...
+func NewNopLogger() Logger {
+	logger := &NopLogger{}
 
 	return logger
 }
 
 // Log ...
-func (l NilLogger) Log(keyvals ...interface{}) error {
+func (l NopLogger) Log(keyvals ...interface{}) error {
 	// Do nothing.
 
 	return nil
