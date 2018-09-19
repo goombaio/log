@@ -15,5 +15,48 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-// Package log defines interfaces for logging.
+/*
+Package log implements interfaces and objects for logging and it provides a
+structured logger.
+
+Package log provides a structured logger.
+
+Structured logging produces logs easily consumed by humans or machines. Humans
+might be interested in debugging errors, or tracing specific requests. Machines
+might be interested in counting interesting events, or aggregating information
+for off-line processing. Package log is designed to encourage both of these
+best practices.
+
+Basic Usage
+
+The fundamental interface is Logger. Loggers create log events from key/value
+data. The Logger interface has a single method, Log, which accepts a sequence
+of alternating key/value pairs.
+
+	type Logger interface {
+		Log(keyvals ...interface{}) error
+	}
+
+Example
+
+This is an example using log.FmtLogger which prints all given keyvalues:
+
+	package main
+
+	import (
+		"github.com/goombaio/log"
+	)
+
+	func main() {
+		output := os.Stdout
+		logger := log.NewFmtLogger(output)
+
+		err := logger.Log("foo", "bar", "1", true, nil)
+		if err != nil {
+			panic(err)
+		}
+		// Output:
+		// foo bar 1 true <nil>
+	}
+*/
 package log

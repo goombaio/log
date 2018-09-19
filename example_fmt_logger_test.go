@@ -23,7 +23,6 @@ import (
 	"github.com/goombaio/log"
 )
 
-// ExampleFmtLogger_Log ...
 func ExampleFmtLogger_Log() {
 	output := os.Stdout
 	logger := log.NewFmtLogger(output)

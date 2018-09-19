@@ -21,7 +21,6 @@ import (
 	"github.com/goombaio/log"
 )
 
-// ExampleNopLogger_Log ...
 func ExampleNopLogger_Log() {
 	logger := log.NewNopLogger()
 
