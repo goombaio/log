@@ -17,12 +17,10 @@
 
 package log
 
-/*
-Logger is the fundamental interface for all log operations.
-
-Log creates a log event from keyvals, a variadic sequence of alternating
-keys and values.
-*/
+// Logger is the fundamental interface for all log operations.
+//
+// Log creates a log event from keyvals, a variadic sequence of alternating
+// keys and values.
 type Logger interface {
 	Log(keyvals ...interface{}) error
 }
