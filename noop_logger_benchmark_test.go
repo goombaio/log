@@ -15,21 +15,22 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package log
+package log_test
 
-// NopLogger represents a log.Logger that does nothing.
-type NopLogger struct{}
+import (
+	"testing"
 
-// NewNopLogger creates a new log.Logger.
-func NewNopLogger() Logger {
-	logger := &NopLogger{}
+	"github.com/goombaio/log"
+)
 
-	return logger
-}
+func BenchmarkNoopLogger_Log(b *testing.B) {
+	logger := log.NewNoopLogger()
 
-// Log ignores all keyvals received as arguments and does nothing.
-func (l NopLogger) Log(keyvals ...interface{}) error {
-	// Do nothing.
+	b.ReportAllocs()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = logger.Log(i)
+	}
 
-	return nil
+	b.StopTimer()
 }

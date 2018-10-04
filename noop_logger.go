@@ -15,28 +15,21 @@
 // License for the specific language governing permissions and limitations
 // under the License.
 
-package log_test
+package log
 
-import (
-	"testing"
+// NoopLogger represents a log.Logger that does nothing.
+type NoopLogger struct{}
 
-	"github.com/goombaio/log"
-)
+// NewNoopLogger creates a new log.Logger.
+func NewNoopLogger() Logger {
+	logger := &NoopLogger{}
 
-func TestNopLogger(t *testing.T) {
-	_ = log.NewNopLogger()
+	return logger
 }
 
-func TestNopLogger_Log(t *testing.T) {
-	logger := log.NewNopLogger()
+// Log ignores all keyvals received as arguments and does nothing.
+func (l NoopLogger) Log(keyvals ...interface{}) error {
+	// Do nothing.
 
-	err := logger.Log("foo")
-	if err != nil {
-		t.Fatalf("Expected no error but got %s", err)
-	}
-
-	err = logger.Log("foo", 1)
-	if err != nil {
-		t.Fatalf("Expected no error but got %s", err)
-	}
+	return nil
 }

@@ -18,15 +18,25 @@
 package log_test
 
 import (
+	"testing"
+
 	"github.com/goombaio/log"
 )
 
-func ExampleNopLogger_Log() {
-	logger := log.NewNopLogger()
+func TestNoopLogger(t *testing.T) {
+	_ = log.NewNoopLogger()
+}
 
-	err := logger.Log("foo", "bar", "1", true, nil)
+func TestNoopLogger_Log(t *testing.T) {
+	logger := log.NewNoopLogger()
+
+	err := logger.Log("foo")
 	if err != nil {
-		panic(err)
+		t.Fatalf("Expected no error but got %s", err)
 	}
-	// Output:
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
 }
