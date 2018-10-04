@@ -18,19 +18,15 @@
 package log_test
 
 import (
-	"testing"
-
 	"github.com/goombaio/log"
 )
 
-func BenchmarkNopLogger_Log(b *testing.B) {
-	logger := log.NewNopLogger()
+func ExampleNoopLogger_Log() {
+	logger := log.NewNoopLogger()
 
-	b.ReportAllocs()
-	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		_ = logger.Log(i)
+	err := logger.Log("foo", "bar", "1", true, nil)
+	if err != nil {
+		panic(err)
 	}
-
-	b.StopTimer()
+	// Output:
 }
