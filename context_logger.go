@@ -49,11 +49,8 @@ func (l *ContextLogger) AddPrefix(prefix interface{}) {
 }
 
 // AddSuffix adds a prefix to the logger prefixes set.
-func (l *ContextLogger) AddSuffix(suffix interface{}) error {
-
+func (l *ContextLogger) AddSuffix(suffix interface{}) {
 	l.suffixes = append(l.suffixes, suffix)
-
-	return nil
 }
 
 // Log encodes encodes keyvals to a io.Writer in logfmt format.
