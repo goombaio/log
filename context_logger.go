@@ -32,7 +32,7 @@ type ContextLogger struct {
 }
 
 // NewContextLogger returns a new ContextLogger type instance
-func NewContextLogger(w io.Writer) Logger {
+func NewContextLogger(w io.Writer) *ContextLogger {
 	contextLogger := &ContextLogger{
 		output: w,
 
@@ -44,15 +44,12 @@ func NewContextLogger(w io.Writer) Logger {
 }
 
 // AddPrefix adds a prefix to the logger prefixes set.
-func (l ContextLogger) AddPrefix(prefix interface{}) error {
-
+func (l *ContextLogger) AddPrefix(prefix interface{}) {
 	l.prefixes = append(l.prefixes, prefix)
-
-	return nil
 }
 
 // AddSuffix adds a prefix to the logger prefixes set.
-func (l ContextLogger) AddSuffix(suffix interface{}) error {
+func (l *ContextLogger) AddSuffix(suffix interface{}) error {
 
 	l.suffixes = append(l.suffixes, suffix)
 
@@ -60,7 +57,7 @@ func (l ContextLogger) AddSuffix(suffix interface{}) error {
 }
 
 // Log encodes encodes keyvals to a io.Writer in logfmt format.
-func (l ContextLogger) Log(keyvals ...interface{}) error {
+func (l *ContextLogger) Log(keyvals ...interface{}) error {
 	// Prefixes
 	for _, prefix := range l.prefixes {
 		_, err := fmt.Fprintf(l.output, "%v ", prefix)

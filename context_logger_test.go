@@ -28,3 +28,52 @@ func TestContextLogger(t *testing.T) {
 	output := ioutil.Discard
 	_ = log.NewContextLogger(output)
 }
+
+func TestContextLogger_Log(t *testing.T) {
+	output := ioutil.Discard
+	logger := log.NewContextLogger(output)
+
+	err := logger.Log("foo")
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+}
+
+func TestContextLogger_AddPrefix(t *testing.T) {
+	output := ioutil.Discard
+	logger := log.NewContextLogger(output)
+
+	logger.AddPrefix("prefix1")
+
+	err := logger.Log("foo")
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+}
+
+func TestContextLogger_AddSuffix(t *testing.T) {
+	output := ioutil.Discard
+	logger := log.NewContextLogger(output)
+
+	logger.AddSuffix("suffix1")
+
+	err := logger.Log("foo")
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+
+	err = logger.Log("foo", 1)
+	if err != nil {
+		t.Fatalf("Expected no error but got %s", err)
+	}
+}
